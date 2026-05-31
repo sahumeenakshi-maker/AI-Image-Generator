@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AI Image Generator</title>
+    <style>
+        body { background: linear-gradient(to right, #8e2de2, #4a00e0); color: white; text-align: center; font-family: sans-serif; }
+        .container { margin-top: 50px; }
+        input { padding: 10px; border-radius: 20px; border: none; width: 300px; }
+        button { padding: 10px 20px; border-radius: 10px; background: #ffe0b2; cursor: pointer; border: none; font-weight: bold; }
+        .gallery { display: flex; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+        img { width: 300px; margin: 15px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>IMAGE GENERATOR</h1>
+
+    {% if error %}
+        <p style="color: yellow; font-weight: bold; background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px;">
+            {{ error }}
+        </p>
+    {% endif %}
+
+    <form method="POST">
+        <input type="text" name="prompt" placeholder="Enter what you want..." required>
+        <button type="submit">Create Image</button>
+    </form>
+
+    <div class="gallery">
+        {% if images %}
+            {% for img_url in images %}
+                <img src="{{ img_url }}" alt="AI Result">
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
