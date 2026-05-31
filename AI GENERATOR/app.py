@@ -13,10 +13,10 @@ def index():
         api_endpoint = "https://ai-text-to-image-generator-flux-free-api.p.rapidapi.com/aaaaaaaaaaaaaaaaaiimagegenerator/quick.php"
         # NOTE: Make sure this key matches exactly what you used in Jupyter!
         my_headers = {
-            "x-rapidapi-key": "9ba3b99f07msh53e44f88a7f680ap118d0djsn1a98ab9a3664",
-            "x-rapidapi-host": "ai-text-to-image-generator-flux-free-api.p.rapidapi.com",
-            "Content-Type": "application/json"
-        }
+    "x-rapidapi-key": "YOUR_API_KEY",
+    "x-rapidapi-host": "ai-text-to-image-generator-flux-free-api.p.rapidapi.com",
+    "Content-Type": "application/json"
+}
         
         generation_params = {
             "prompt": user_input,
